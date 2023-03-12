@@ -1,4 +1,4 @@
-Write wise
+### Write wise
 
 Write-wise is an AI-powered Writing Assistant app that helps users write better by providing real-time suggestions and feedback on grammar, syntax, and style. Using state-of-the-art language models, including OpenAI's GPT-3, write-wise offers intelligent assistance that adapts to your writing style and context, making suggestions that are tailored to your needs.
 
