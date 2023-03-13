@@ -1,0 +1,80 @@
+@import 'styles/common';
+
+$padding: 1rem;
+
+.fieldContainer {
+  @extend .flexCenterCol;
+  position: relative;
+}
+
+.label {
+  position: absolute;
+  top: 32%;
+  left: $padding;
+  font-size: 1rem;
+  font-weight: 300;
+  color: $veryLightGray;
+  transition: color, box-shadow, top, font-size 0.125s ease-in-out;
+  pointer-events: none;
+}
+
+.input {
+  all: unset;
+  padding: $padding;
+  padding-bottom: calc($padding - 0.25rem);
+  padding-top: calc($padding + 0.25rem);
+  font-size: 0.95rem;
+  line-height: 1.25rem;
+  font-weight: 400;
+  border-radius: 8px;
+  border: 1px solid $veryLightGray;
+  transition: box-shadow 0.15s ease-in-out;
+
+  &::selection {
+    color: $halfWhite;
+    background-color: $primaryBlue;
+  }
+
+  &:hover {
+    border-color: $primaryBlue;
+    box-shadow: 0 0 calc($padding / 4) $blueBoxShadow;
+  }
+
+  &:focus {
+    border-color: $primaryBlue;
+    box-shadow: 0 0 calc($padding / 2) $blueBoxShadow;
+
+    & ~ label {
+      top: 15%;
+      font-size: 0.75rem;
+      color: $primaryBlue;
+      text-shadow: 0 0 2px $blueBoxShadow;
+    }
+  }
+
+  &.isValue ~ label {
+    top: 15%;
+    font-size: 0.75rem;
+  }
+}
+
+.errorField {
+  border-color: $red !important;
+  box-shadow: 0 0 calc($padding / 4) $lightRedBoxShadow !important;
+
+  & ~ label {
+    top: 22%;
+    color: $lightRed !important;
+    text-shadow: 0 0 2px $lightRedBoxShadow !important;
+  }
+}
+
+.fieldErrorText {
+  @extend .fallFromTop;
+  align-self: flex-start;
+  font-size: 0.75rem;
+  line-height: 2rem;
+  font-weight: 300;
+  color: $lightRed;
+  text-shadow: 0 0 2px $lightRedBoxShadow;
+}
